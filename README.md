@@ -36,3 +36,33 @@ This Power BI dashboard is built using a **Snowflake Schema**, ensuring efficien
 - **Pagos (Payments & Expenses)**: Stores **business expenses, invoices, and financial movements**.
 
 📌 This relational model allows **efficient filtering, aggregation, and financial analysis** across all reports.
+
+## 📊 Key DAX Measures  
+This section includes the most relevant **DAX calculations** used in this Power BI dashboard.  
+
+### 🔹 Bank Account Balances  
+Calculates the total balance for different bank accounts.  
+```DAX
+VAR CAJAACTUAL = "Bank Account 1"
+VAR SALDO = SUM(Saldos[Monto])
+RETURN
+IF(SELECTEDVALUE(Saldos[Cuenta]) = CAJAACTUAL, SALDO, BLANK())
+```
+
+### 🔹 Total Supplier Debt  
+Computes the outstanding payments to suppliers.  
+```DAX
+Total Supplier Debt = SUM(Proveedores[Debt])
+```
+
+### 🔹 Net Profit Calculation  
+Calculates the **profit after deducting expenses**.  
+```DAX
+Net Profit = [Total Sales] - SUM(Pagos[Total Expenses])
+```
+
+### 🔹 Exchange Rate Conversion  
+Converts local currency into USD using the latest exchange rate.  
+```DAX
+Sales in USD = SUM(Ventas[Revenue]) / SELECTEDVALUE(Tipo_Cambio[ExchangeRate])
+```
