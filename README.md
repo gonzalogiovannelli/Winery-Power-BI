@@ -21,3 +21,18 @@ It helps stakeholders make data-driven decisions by visualizing **monthly result
 - **Power BI** for interactive data visualization.
 - **DAX (Data Analysis Expressions)** for calculations and measures.
 - **Relational Database (Snowflake Schema)** for structured data modeling.
+
+## 🗂 Database Structure & Tables
+
+This Power BI dashboard is built using a **Snowflake Schema**, ensuring efficient data relationships and performance.
+
+### 🔹 Main Tables:
+
+- **Ventas (Sales)**: Stores **transaction data, revenue sources, and amounts** for analysis.
+- **Saldos (Account Balances)**: Tracks **bank balances and financial statements**.
+- **Proveedores (Suppliers)**: Lists **supplier names and outstanding debts**.
+- **Inventario (Inventory)**: Manages **wine stock levels, valuations, and winery details**.
+- **Calendario (Calendar Table)**: A **date reference table** for time-based analysis.
+- **Pagos (Payments & Expenses)**: Stores **business expenses, invoices, and financial movements**.
+
+📌 This relational model allows **efficient filtering, aggregation, and financial analysis** across all reports.
